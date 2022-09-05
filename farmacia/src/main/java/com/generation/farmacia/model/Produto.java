@@ -1,5 +1,7 @@
 package com.generation.farmacia.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,8 +27,7 @@ public class Produto {
 	@Size(min=1, max=30,message="Nome do produto precisa ter no mínimo 1 e no máximo 30 caracteres!")
 	private String nome;
 	
-	@NotNull(message="O preço é obrigatório!")
-	private Double preco;
+	private BigDecimal preco;
 	
 	@NotNull(message="O código é obrigatório!")
 	private Integer codigo;
@@ -55,11 +56,11 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public Double getPreco() {
+	public BigDecimal getPreco() {
 		return preco;
 	}
 
-	public void setPreco(Double preco) {
+	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
 	}
 
